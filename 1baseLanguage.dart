@@ -37,7 +37,7 @@ void test2() {
   var num2 = 10.2; //类型推断，实际是double 类型
 
   //数字可以使用abs()、ceil()、floor()等，也支持常见的四则运算、移位、与、或、非、异或等操作
-  //也可以使用aath数学库 import 'dart:math';
+  //也可以使用math数学库 import 'dart:math';
   var num3 = num1 | num1 & num1 & num1;
   var numa = num2.abs();
   var numc = num2.ceil();
