@@ -30,7 +30,6 @@ testAwait2() async {
 }
 
 void main() {
-  runApp(const MyApp());
   print("总体任务开始");
   test();
   print("第一个测试完毕");
