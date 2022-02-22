@@ -59,6 +59,13 @@ testBlock() {
   block3("哎呀");
 }
 
+
+//传入无参闭包或者普通函数
+requestUser(void completed()) {
+  Timer(Duration(seconds: 2), () {
+    completed();
+  });
+}
 //传递闭包参数，加上？表示可选，(闭包的参数名在中间，因此？写到最后)
 requestUserTokenByCompleted(void completed(String? userToken)?) {
   Timer(Duration(seconds: 2), () {
@@ -70,7 +77,10 @@ requestUserTokenByCompleted(void completed(String? userToken)?) {
 
 //闭包函数
 void main() {
-    testBlock();
+    requestUser(() {
+      print("调用了一个无参闭包函数");
+    });
+    requestUser(getUserInfo); //此时requestUser的回调在 getUserInfo中
 
     requestUserTokenByCompleted((token) {
       print("获取用户信息成功了,token:${token}");

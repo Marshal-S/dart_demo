@@ -19,11 +19,11 @@ void test1() {
   const readonlyName = "我是只读的常量"; //编辑期间使用，  也和 swift 中 let 类似
 
   // final finalName = "我只能被赋值一次";//只能被赋值椅子，之后不能赋值
-  final finalName; //只能被赋值椅子，之后不能赋值，宛如swift中的let
+  final finalName; //只能被赋值一次，之后不能赋值，宛如swift中的let
   finalName = "我只能被赋值一次";
 
-  // static const sreadonlyName = "我是只读的类属性，只能在类中使用，相当于";
-  var name = "我是可更改的变量"; //变
+  // static const sreadonlyName = "我是只读的类属性，只能在类中使用";
+  var name = "我是可更改的变量"; //变量
   name = "我的内容更新了";
 
   print(name);
@@ -63,8 +63,8 @@ void test3() {
     '123123'
   ''';
   str3 = """ 
-    'sfasdf' 
-    '123123'
+    sfasdf
+    123123
   """;
 
   //字符串前面加上r内部字符串不会被转义

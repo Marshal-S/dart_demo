@@ -8,7 +8,7 @@ import 'dart:async';
 Future<bool> simulateOperate() async {
   //假设这一有一些非常耗时的操作逻辑，例如对本地数据整理
   var num = 0;
-  for(var i = 0; i < 10000000; i++) {
+  for(var i = 0; i < 1000000000; i++) {
     num++;
   }
   print('我的异步任务执行完毕了--${num}');

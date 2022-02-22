@@ -3,7 +3,7 @@
 var pointMap = Map<String, List<double>>();
 
 class Point {
-  double x = 0; //可选类型，不赋值默认为 null
+  double x = 0;
   double y = 0;
   // double? x, y; //可以连续声明多个，也可以赋值
   // double x = 0, y = 0;
@@ -83,7 +83,7 @@ class Rectangle {
 
 
 //抽象方法 abstract,
-//抽象方法就是接口，又被成为隐式接口，通常作为接口实现成多个相似的类
+//抽象方法就是接口，通常作为接口实现成多个相似的类
 //其无法创建实例,且内部定义的方法一定是抽象方法
 abstract class AbstractClass {
   // Define constructors, fields, methods...
@@ -122,7 +122,7 @@ testSpeak() {
 
 //继承 extends
 //class 内部也可以定义接口，只不过是通过继承重写的方式来实现
-//这种接口也被称为隐式接口
+//因此通过继承定义的接口也被称为隐式接口
 class ParentClass {
   ParentClass();
 
@@ -188,7 +188,7 @@ class A {
 //maxin
 //使用方式，class ... + with + maxin类
 //多继承中的基本类，使用maxin修饰的类，可以让继承者们同时继承不止一个父类
-//与其他语言不同的是(C++除外)，通过多继承，可以直接使用继承的类已实现现有的功能
+//与其他语言不同的是(C++除外)，通过多继承，可以直接使用被继承的类已实现现有的功能
 //使用时需，注意类功能的重复，以及类多继承中交叉继承的问题
 //注意：其他的语言通过接口、协议、扩展等来代替他，其中扩展与其类似，而扩展却是针对固定类的
 
@@ -255,12 +255,13 @@ testStack2() {
 //可能会封装一个，支持多个类型的处理方法
 //单纯的使用一个泛型方法,其类型约束也是extends
 class handlerClass {
-  static print<T>(T object) {
-    //这里可以随便传递，打印了运行时的实际类型字符串
-    print(object.runtimeType.toString());
+  static pushByList<T>(List<T> list, T object) {
+    list.add(object);
+    //debug可以打印了运行时的实际类型字符串
+    // print(object.runtimeType.toString());
   }
-  static printType<T extends String>(T str) {
-    print(str.toString());
+  static pushByList2<T extends String>(List<T> list, T str) {
+    list.add(str);
   }
 }
 
